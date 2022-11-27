@@ -1,11 +1,11 @@
 package com.luv2code.springdemo;
 
-public class TrackCoach implements Coach {
+public class PowerlifterCoach implements Coach {
 
 	@Override
 	public String getDailyWorkout() {
-		// TODO Auto-generated method stub
-		return "Run a hard 5k.";
+		
+		return "Do more Dealifts, Bench and Squats.";
 	}
 
 	@Override
