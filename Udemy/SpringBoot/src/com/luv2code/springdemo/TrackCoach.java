@@ -1,6 +1,19 @@
 package com.luv2code.springdemo;
 
 public class TrackCoach implements Coach {
+	
+	private FortuneService fortuneService;
+
+	/**
+	 * @param fortuneService
+	 */
+	public TrackCoach(FortuneService fortuneService) {
+		this.fortuneService = fortuneService;
+	}
+
+	public TrackCoach() {
+		// TODO Auto-generated constructor stub
+	}
 
 	@Override
 	public String getDailyWorkout() {
@@ -9,9 +22,8 @@ public class TrackCoach implements Coach {
 	}
 
 	@Override
-	public String getDailyFortune() {
-		// TODO Auto-generated method stub
-		return null;
+	public String getDailyFortune() {		
+		return "Just do it: " + fortuneService.getFortune();
 	}
 
 }

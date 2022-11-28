@@ -9,7 +9,7 @@
 
     <!-- define the dependency -->
     
-    <bean id="myFortune" 
+    <bean id="myFortuneService" 
     	class="com.luv2code.springdemo.HappyFortuneService">
 	</bean>
     
@@ -17,13 +17,20 @@
     	class="com.luv2code.springdemo.TrackCoach"> 
     	
     	<!--  set up the constructor injection -->
-    	<constructor-arg ref="myFortune"/>
+    	<constructor-arg ref="myFortuneService"/>
     </bean>
-    
-    <bean id="pwCoach"
-    	class="com.luv2code.springdemo.PowerlifterCoach"> 
-    </bean>
-    
+      
+     <bean id="myCricketCoach"  	
+     	   class="com.luv2code.springdemo.CricketCoach">
+    	<!--  set up setter injection -->
+    	
+    	<property name="fortuneService" ref="myFortuneService"></property>
+    	
+    	<!-- inject literals values -->
+    	
+    	<property name="emailAddress" value="thebestcoach@hoa.com"></property>
+    	<property name="team" value="Bayern München."></property>
+    	</bean>
 </beans>
 
 
