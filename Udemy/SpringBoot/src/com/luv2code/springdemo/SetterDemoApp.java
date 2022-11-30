@@ -4,10 +4,13 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class SetterDemoApp {
 
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		
 		
-		// load the spring cof file
+		// load the spring config file
 		
 		ClassPathXmlApplicationContext context 
 				= new ClassPathXmlApplicationContext("applicationContext.xml");
@@ -17,13 +20,19 @@ public class SetterDemoApp {
 		CricketCoach theCoach = context.getBean("myCricketCoach" , CricketCoach.class);
 		
 		// call methods on the bean
-		System.out.println(theCoach.getDailyWorkout());
-		System.out.println(theCoach.getDailyFortune());
+		/*
+		 * System.out.println(theCoach.getDailyWorkout());
+		 * System.out.println(theCoach.getDailyFortune());
+		 */
 		
 		// call our new methods to get the literal values
 		
-		System.out.println(theCoach.getEmailAddress());
-		System.out.println(theCoach.getTeam());
+		
+		  System.out.println(theCoach.getEmailAddress());
+		  System.out.println(theCoach.getTeam());
+		 
+	
+		
 		// close the context
 		context.close();
 

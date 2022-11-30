@@ -14,7 +14,7 @@ public class CricketCoach implements Coach {
 	// create no-arg constructor
 	
 	public CricketCoach() {
-		System.out.println("CricketCoach: inside no arg construtor");
+		//System.out.println("CricketCoach: inside no arg construtor");
 	}
 	
 	
@@ -31,20 +31,20 @@ public class CricketCoach implements Coach {
 
 
 	public void setEmailAddress(String emailAddress) {
-		System.out.println("CricketCoach: inside setter method - setEmailAddress.");
+		//System.out.println("CricketCoach: inside setter method - setEmailAddress.");
 		this.emailAddress = emailAddress;
 	}
 
 
 	public void setTeam(String team) {
-		System.out.println("CricketCoach: inside setter method - setTeam.");
+		//System.out.println("CricketCoach: inside setter method - setTeam.");
 		this.team = team;
 	}
 
 
 	// this setter get call by Spring to inject the dependency
 	public void setFortuneService(FortuneService fortuneService) {
-		System.out.println("CricketCoach: inside setter method - setFortuneService.");
+		//System.out.println("CricketCoach: inside setter method - setFortuneService.");
 		this.fortuneService = fortuneService;
 	}
 

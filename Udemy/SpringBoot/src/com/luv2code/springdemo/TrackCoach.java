@@ -12,12 +12,12 @@ public class TrackCoach implements Coach {
 	}
 
 	public TrackCoach() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Override
 	public String getDailyWorkout() {
-		// TODO Auto-generated method stub
+	
 		return "Run a hard 5k.";
 	}
 
@@ -26,4 +26,18 @@ public class TrackCoach implements Coach {
 		return "Just do it: " + fortuneService.getFortune();
 	}
 
+	// add an init method 
+	
+	public void doMyStartupStuff(){
+		
+	System.out.println("TrackCoach: inside method doMyStartupStuff!");
+		
+	}
+	// add a destroy method
+	public void doCleanUpStuffGo(){
+		
+	System.out.println("TrackCoach: inside method doCleanUpStuffGo!");
+		
+	}
+	
 }
