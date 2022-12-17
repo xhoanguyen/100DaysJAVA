@@ -1,15 +1,8 @@
-package quarkus.model;
+package quarkus;
 
 import java.math.BigDecimal;
 
 public class Account {
-
-    public enum AccountStatus {
-        OPEN,
-        CLOSED,
-        OVERDRAWN
-
-    }
 
     public Long accountNumber;
     public Long customerNumber;
