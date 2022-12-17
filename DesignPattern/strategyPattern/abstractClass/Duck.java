@@ -3,10 +3,18 @@ package strategyPattern.abstractClass;
 import strategyPattern.behaviorInterface.FlyBehavior;
 import strategyPattern.behaviorInterface.QuackBehavior;
 
-public class Duck {
+public abstract class Duck {
 
     protected FlyBehavior flyBehavior;
     protected QuackBehavior quackBehavior;
+
+    public void setFlyBehavior(FlyBehavior flyBehavior) {
+        this.flyBehavior = flyBehavior;
+    }
+
+    public void setQuackBehavior(QuackBehavior quackBehavior) {
+        this.quackBehavior = quackBehavior;
+    }
 
     public Duck() {
     }

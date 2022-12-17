@@ -2,12 +2,11 @@ package strategyPattern.behaviorImpl;
 
 import strategyPattern.behaviorInterface.FlyBehavior;
 
-public class FlyWithWings implements FlyBehavior {
+public class FlyRocketPowered implements FlyBehavior {
 
     @Override
     public void fly() {
-
-        System.out.println("I'm flying with my wings!");
+        System.out.println("I'm flying with a rocket!");
 
     }
 
