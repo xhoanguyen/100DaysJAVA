@@ -4,6 +4,13 @@ import java.math.BigDecimal;
 
 public class Account {
 
+    public enum AccountStatus {
+        OPEN,
+        CLOSED,
+        OVERDRAWN
+
+    }
+
     public Long accountNumber;
     public Long customerNumber;
     public String customerName;
