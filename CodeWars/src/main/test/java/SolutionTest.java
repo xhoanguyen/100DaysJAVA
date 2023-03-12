@@ -1,3 +1,4 @@
+package src.main.test.java;
 import org.junit.jupiter.api.*;
 import static org.junit.Assert.assertEquals;
 

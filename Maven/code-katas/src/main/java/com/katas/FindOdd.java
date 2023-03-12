@@ -1,3 +1,5 @@
+package com.katas;
+
 import java.util.HashMap;
 
 public class FindOdd {

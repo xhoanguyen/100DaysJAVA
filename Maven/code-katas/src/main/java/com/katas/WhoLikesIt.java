@@ -1,3 +1,5 @@
+package com.katas;
+
 class WhoLikesIt {
     public static String whoLikesIt(String... names) {
 

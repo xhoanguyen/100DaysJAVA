@@ -1,7 +1,11 @@
-import org.junit.jupiter.api.*;
+package com.katas;
+
+
 import static org.junit.Assert.assertEquals;
 
-public class SolutionTest {
+import org.junit.Test;
+
+public class EndsWithTest {
     @Test
     public void staticTests() {
         check("samurai", "ai", true);
