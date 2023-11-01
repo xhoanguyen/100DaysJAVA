@@ -1,46 +1,56 @@
-import java.util.Arrays;
-import java.util.Comparator;
-
-
-interface I <S, T extends CharSequence> {
-    void len( S text );
-    void len( T text );
+interface Buyable  {
+    double price();
 }
 
-@FunctionalInterface
-interface FI extends I<String, String> {
+abstract class Event {
 
 }
 
 
-public class LambdaExpressionsExamples {
-
-    public static void main( String[] args ) {
-
-    String[] words = { " Joker   ","M\n", "\nBatman", " Q", "\t\tFlash\t" };
-
-        class TrimComparator implements Comparator<String> {
-            @Override
-            public int compare( String s1, String s2 ) {
-                return s1.trim().compareTo( s2.trim() );
-            }
-        }
-
-        Arrays.sort( words, new TrimComparator() );
-//        System.out.println(Arrays.toString(words));
-
-//        Arrays.sort( words, new Comparator<String>() {
-//            @Override public int compare( String s1, String s2 ) {
-//                return s1.trim().compareTo( s2.trim() );
-//            } } );
-
-
-        Comparator<String> c = (String s1, String s2) ->
-        { return s1.trim().compareTo( s2.trim() ); };
-        Arrays.sort(words, c);
-
-        System.out.println( Arrays.toString( words ) );
-
-//        System.out.println( Arrays.toString( words ) );
+class Bike implements Buyable{
+    @Override
+    public double price() {
+        return 199;
     }
 }
+
+
+class PriceUtils {
+    static double calculateSum( Buyable first, Buyable... more ) {
+        double result = first.price();
+        for ( Buyable buyable : more ) {
+            result += buyable.price();
+        }
+        return result;
+    }
+}
+
+
+class MuseumVisit extends Event implements Buyable {
+    int price;
+    MuseumVisit( int price ) { this.price = price; }
+    @Override public double price() {
+        return price;
+    }
+}
+
+
+public class LambdaExpressionsExamples1 {
+
+    public static void main(String[] args) {
+        Buyable hercules = new Bike();
+        MuseumVisit binarium = new MuseumVisit( 8 );
+
+        System.out.println( hercules.price() );  // 199.0
+        System.out.println( binarium.price() );  // 8.0
+
+        Buyable winora = new Bike();
+        Buyable mimomenta = new MuseumVisit( 12 );
+
+        double sum = PriceUtils.calculateSum(hercules, binarium, winora, mimomenta);
+        System.out.println( sum );     // 418.0
+    }
+}
+
+
+
